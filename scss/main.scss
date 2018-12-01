@@ -1,0 +1,144 @@
+@import "reset";
+@import "mixins";
+@import "news";
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.wrapper {
+  max-width: 1176px;
+  margin: auto;
+}
+
+header {
+  background: url("../images/background.jpg") center;
+  background-size: cover;
+  height: 500px;
+  text-align: center;
+  padding-top: 200px;
+  width: 100%;
+}
+
+h1{
+  text-align: center;
+  font-size: 70px;
+  color: rgba(49, 18, 33, 0.8);
+  font-weight: 700;
+}
+
+main {
+  flex-grow: 1;
+  background-color: #150909;
+}
+
+.form {
+  background-color: #150909;
+  padding: 50px 0;
+}
+
+.form__title {
+  color: white;
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.choose-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  color: white;
+}
+
+.choose-form__item {
+  width: 20%;
+  &.submit {
+    @include button(white);
+  }
+}
+
+.choose-form__select {
+  width: 100%;
+  padding: 10px;
+}
+
+.choose-form__label {
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+
+footer {
+  background-color: #150909;
+  padding: 30px 0;
+  text-align: left;
+  a {
+    color: white;
+  }
+}
+
+.news__title {
+  display: none;
+  color: #150909;
+  font-size: 36px;
+  text-align: center;
+  padding-top: 50px;
+  margin-bottom: 60px;
+}
+
+@media screen and (max-width: 1180px) {
+  .wrapper {
+    padding: 0 20px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .choose-form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .choose-form__item {
+    width: 300px;
+    margin-bottom: 20px;
+  }
+
+  .form {
+    padding: 30px 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  header {
+    height: auto;
+    padding-top: 0;
+  }
+
+  h1 {
+    font-size: 40px;
+    padding: 50px 0;
+  }
+
+  .form__title {
+    font-size: 25px;
+    line-height: normal;
+  }
+
+  .news__title {
+    font-size: 25px;
+    padding-top: 30px;
+    margin-bottom: 40px;
+  }
+}

@@ -1,6 +1,7 @@
-require('es6-promise').polyfill();
-require('isomorphic-fetch');
 import {News} from "./News.js";
+import '../scss/main.scss';
+import "@babel/polyfill";
+
 window.onload = function() {
     //Event Listener - submit class button click
     document.querySelector('.submit').onclick = function (e) {
@@ -29,7 +30,7 @@ window.onload = function() {
         enableButton('.submit');
 
     }
-    
+
     //Get input value from UI
     function getInputValue(element) {
         return document.getElementById(element).value;
